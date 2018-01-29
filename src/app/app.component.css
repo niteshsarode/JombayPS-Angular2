@@ -1,0 +1,38 @@
+.sidenav-container {
+  position: absolute;
+  top: 80px;
+  bottom: 60px;
+  left: 20px;
+  right: 0;
+}
+
+.sidenav {
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  background: rgb(135,206,235);
+}
+
+.sidenav-content {
+	text-align: center;
+	background-color: rgb(192,192,192);
+}
+
+.question-btn {
+	margin-top: 20px;
+	margin-left: 30%;
+}
+
+.textarea-width {
+  width: 80%;
+}
+
+.next-btn {
+	float: right;
+	margin-right: 15px;
+}
+
+.previous-btn {
+	float: left;
+	margin-left: 15px;
+}

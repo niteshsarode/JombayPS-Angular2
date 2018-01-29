@@ -1,0 +1,34 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<!--Toolbar-->
+<mat-toolbar color="accent">
+    <span><b>{{ title }}</b></span>
+</mat-toolbar>
+<mat-sidenav-container class="sidenav-container">
+    <!--Side Navigation bar-->
+    <mat-sidenav mode="side" opened="true" class="sidenav">
+      <button mat-raised-button class="question-btn" color="primary" (click) = "fetchQuestions()">Questions</button>
+      <div *ngFor="let item of questions; let i = index" [attr.data-index]="i">
+          <button mat-raised-button class="question-btn" color="primary" (click) = "getQuestion(i)">Question {{ i+1 }}</button>
+      </div>
+    </mat-sidenav>
+
+    <!--Main Content-->
+    <mat-sidenav-content class="sidenav-content">
+        <h2>{{ welcomeMsg }}</h2>
+        <div *ngIf="question">
+            <h3 [innerHTML]="question"></h3>
+            <mat-form-field class="textarea-width">
+                <textarea matInput placeholder="Answer" rows="12"></textarea>
+            </mat-form-field>
+            <div *ngIf="index !== 0">
+                <button mat-raised-button class="previous-btn" color="primary" (click) = "previousFunction()">Previous</button>
+            </div>
+            <div *ngIf="index !== 4">
+            <button mat-raised-button class="next-btn" color="primary" (click) = "nextFunction()">Next</button>
+            </div>
+            <div *ngIf="index === 4">
+            <button mat-raised-button class="next-btn" color="primary" (click) = "submitFunction()">Submit</button>
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
